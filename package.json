@@ -1,0 +1,70 @@
+{
+  "name": "base64-encode-decode-easily",
+  "displayName": "Base64 encode decode easily",
+  "description": "Encode string to base-64 or decode base-64 to string",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:base64-encode-decode-easily.base64EncodeDecodeEasily"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+      "commands": [{
+        "command": "base64-encode-decode-easily.base64EncodeDecodeEasily",
+        "title": "Base64 Encode Decode Easily"
+      },
+      {
+        "command": "base64-encode-decode-easily.encodeSelection",
+        "title": "Base64 Encode Selection"
+      },
+      {
+        "command": "base64-encode-decode-easily.decodeSelection",
+        "title": "Base64 Decode Selection"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "base64-encode-decode-easily.encodeSelection",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "base64-encode-decode-easily.decodeSelection",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "base64-encode-decode-easily.encodeSelection",
+        "key": "ctrl+shift+e",
+        "when": "editorTextFocus && editorHasSelection"
+      },
+      {
+        "command": "base64-encode-decode-easily.decodeSelection",
+        "key": "ctrl+shift+d",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.103.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "eslint": "^9.39.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
