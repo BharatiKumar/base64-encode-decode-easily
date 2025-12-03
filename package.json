@@ -3,7 +3,7 @@
   "displayName": "Base64 encode decode easily",
   "publisher": "BharatiKambhampati",
   "description": "Encode string to base-64 or decode base-64 to string",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.103.0"
   },
@@ -15,7 +15,8 @@
   ],
   "main": "./extension.js",
   "contributes": {
-      "commands": [{
+    "commands": [
+      {
         "command": "base64-encode-decode-easily.base64EncodeDecodeEasily",
         "title": "Base64 Encode Decode Easily"
       },
